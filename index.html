@@ -1,38 +1,548 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 
-    <h3>قميص أبيض</h3>
-    <p class="price">650 جنيه</p>
-    <button class="btn" onclick="addToCart('قميص أبيض',650)">أضف إلى السلة</button>
-</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div class="card">
-    <img src="https://via.placeholder.com/250" alt="سويتشيرت">
-    <h3>سويتشيرت</h3>
-    <p class="price">700 جنيه</p>
-    <button class="btn" onclick="addToCart('سويتشيرت',700)">أضف إلى السلة</button>
-</div>
+    <title>ALVORA | Fashion Store</title>
 
-<div class="card">
-    <img src="https://via.placeholder.com/250" alt="كاب">
-    <h3>كاب</h3>
-    <p class="price">250 جنيه</p>
-    <button class="btn" onclick="addToCart('كاب',250)">أضف إلى السلة</button>
-</div>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-<div class="card">
-    <img src="https://via.placeholder.com/250" alt="\هودي اسود">
-    <h3>هودي اسود</h3>
-    <p class="price">1400 جنيه</p>
-    <button class="btn" onclick="addToCart('هودي اسود,1400)">أضف إلى السلة</button>
-    </div> 
-    </div>
+<body>
 
-</section>
+    <!-- Header -->
+    <header class="header">
 
-<footer>
-    <p>© ALVORA Clothing</p>
-</footer>
+        <div class="logo">
+            ALVORA
+        </div>
 
-<script src="script.js"></script>
+        <nav class="navbar">
+            <a href="#home">الرئيسية</a>
+            <a href="#products">المنتجات</a>
+            <a href="#categories">الأقسام</a>
+            <a href="#contact">تواصل معنا</a>
+        </nav>
+
+        <button class="cart-btn" onclick="viewCart()">
+            🛒 السلة
+            <span id="cart-count">0</span>
+        </button>
+
+    </header>
+
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                ALVORA COLLECTION
+            </p>
+
+            <h1>
+                أناقتك تبدأ من هنا
+            </h1>
+
+            <p>
+                اكتشفي أحدث تشكيلات الملابس العصرية
+                بتصميمات مميزة تناسب كل إطلالة.
+            </p>
+
+            <a href="#products" class="hero-btn">
+                تسوقي الآن
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Categories -->
+    <section class="categories" id="categories">
+
+        <h2>تسوقي حسب القسم</h2>
+
+        <div class="category-container">
+
+            <div class="category">
+                <h3>تيشيرتات</h3>
+                <p>ستايل يومي مميز</p>
+            </div>
+
+            <div class="category">
+                <h3>هوديز</h3>
+                <p>راحة وأناقة</p>
+            </div>
+
+            <div class="category">
+                <h3>بناطيل</h3>
+                <p>تصميمات عصرية</p>
+            </div>
+
+            <div class="category">
+                <h3>جاكيتات</h3>
+                <p>إطلالة مختلفة</p>
+            </div>
+
+            <div class="category">
+                <h3>شورتات</h3>
+                <p>راحة في كل وقت</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Products -->
+    <section class="products" id="products">
+
+        <div class="section-title">
+
+            <p>NEW COLLECTION</p>
+
+            <h2>
+                أحدث المنتجات
+            </h2>
+
+        </div>
+
+
+        <div class="products-grid">
+
+
+            <!-- Product 1 -->
+            <div class="product-card">
+
+                <div class="product-image">
+                    <img
+                        src="https://via.placeholder.com/500x600"
+                        alt="تيشيرت أسود">
+                </div>
+
+                <div class="product-info">
+
+                    <span>تيشيرتات</span>
+
+                    <h3>
+                        تيشيرت أسود كلاسيك
+                    </h3>
+
+                    <p class="price">
+                        499 جنيه
+                    </p>
+
+                    <select id="size1">
+                        <option>اختاري المقاس</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                    </select>
+
+                    <button
+                        onclick="addToCart('تيشيرت أسود كلاسيك',499)">
+                        أضيفي إلى السلة
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 2 -->
+            <div class="product-card">
+
+                <div class="product-image">
+                    <img
+                        src="https://via.placeholder.com/500x600"
+                        alt="تيشيرت أبيض">
+                </div>
+
+                <div class="product-info">
+
+                    <span>تيشيرتات</span>
+
+                    <h3>
+                        تيشيرت أبيض سادة
+                    </h3>
+
+                    <p class="price">
+                        450 جنيه
+                    </p>
+
+                    <select>
+                        <option>اختاري المقاس</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                    </select>
+
+                    <button
+                        onclick="addToCart('تيشيرت أبيض سادة',450)">
+                        أضيفي إلى السلة
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 3 -->
+            <div class="product-card">
+
+                <div class="product-image">
+                    <img
+                        src="https://via.placeholder.com/500x600"
+                        alt="هودي أسود">
+                </div>
+
+                <div class="product-info">
+
+                    <span>هوديز</span>
+
+                    <h3>
+                        هودي أسود فاخر
+                    </h3>
+
+                    <p class="price">
+                        899 جنيه
+                    </p>
+
+                    <select>
+                        <option>اختاري المقاس</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                    </select>
+
+                    <button
+                        onclick="addToCart('هودي أسود فاخر',899)">
+                        أضيفي إلى السلة
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 4 -->
+            <div class="product-card">
+
+                <div class="product-image">
+                    <img
+                        src="https://via.placeholder.com/500x600"
+                        alt="هودي رمادي">
+                </div>
+
+                <div class="product-info">
+
+                    <span>هوديز</span>
+
+                    <h3>
+                        هودي رمادي
+                    </h3>
+
+                    <p class="price">
+                        850 جنيه
+                    </p>
+
+                    <select>
+                        <option>اختاري المقاس</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                    </select>
+
+                    <button
+                        onclick="addToCart('هودي رمادي',850)">
+                        أضيفي إلى السلة
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 5 -->
+            <div class="product-card">
+
+                <div class="product-image">
+                    <img
+                        src="https://via.placeholder.com/500x600"
+                        alt="بنطلون جينز">
+                </div>
+
+                <div class="product-info">
+
+                    <span>بناطيل</span>
+
+                    <h3>
+                        بنطلون جينز أزرق
+                    </h3>
+
+                    <p class="price">
+                        799 جنيه
+                    </p>
+
+                    <select>
+                        <option>اختاري المقاس</option>
+                        <option>30</option>
+                        <option>32</option>
+                        <option>34</option>
+                        <option>36</option>
+                    </select>
+
+                    <button
+                        onclick="addToCart('بنطلون جينز أزرق',799)">
+                        أضيفي إلى السلة
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 6 -->
+            <div class="product-card">
+
+                <div class="product-image">
+                    <img
+                        src="https://via.placeholder.com/500x600"
+                        alt="بنطلون كارجو">
+                </div>
+
+                <div class="product-info">
+
+                    <span>بناطيل</span>
+
+                    <h3>
+                        بنطلون كارجو
+                    </h3>
+
+                    <p class="price">
+                        850 جنيه
+                    </p>
+
+                    <select>
+                        <option>اختاري المقاس</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                    </select>
+
+                    <button
+                        onclick="addToCart('بنطلون كارجو',850)">
+                        أضيفي إلى السلة
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 7 -->
+            <div class="product-card">
+
+                <div class="product-image">
+                    <img
+                        src="https://via.placeholder.com/500x600"
+                        alt="جاكيت جينز">
+                </div>
+
+                <div class="product-info">
+
+                    <span>جاكيتات</span>
+
+                    <h3>
+                        جاكيت جينز
+                    </h3>
+
+                    <p class="price">
+                        1199 جنيه
+                    </p>
+
+                    <select>
+                        <option>اختاري المقاس</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                    </select>
+
+                    <button
+                        onclick="addToCart('جاكيت جينز',1199)">
+                        أضيفي إلى السلة
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 8 -->
+            <div class="product-card">
+
+                <div class="product-image">
+                    <img
+                        src="https://via.placeholder.com/500x600"
+                        alt="جاكيت شتوي">
+                </div>
+
+                <div class="product-info">
+
+                    <span>جاكيتات</span>
+
+                    <h3>
+                        جاكيت شتوي
+                    </h3>
+
+                    <p class="price">
+                        1499 جنيه
+                    </p>
+
+                    <select>
+                        <option>اختاري المقاس</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                    </select>
+
+                    <button
+                        onclick="addToCart('جاكيت شتوي',1499)">
+                        أضيفي إلى السلة
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 9 -->
+            <div class="product-card">
+
+                <div class="product-image">
+                    <img
+                        src="https://via.placeholder.com/500x600"
+                        alt="شورت جينز">
+                </div>
+
+                <div class="product-info">
+
+                    <span>شورتات</span>
+
+                    <h3>
+                        شورت جينز
+                    </h3>
+
+                    <p class="price">
+                        499 جنيه
+                    </p>
+
+                    <select>
+                        <option>اختاري المقاس</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                    </select>
+
+                    <button
+                        onclick="addToCart('شورت جينز',499)">
+                        أضيفي إلى السلة
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 10 -->
+            <div class="product-card">
+
+                <div class="product-image">
+                    <img
+                        src="https://via.placeholder.com/500x600"
+                        alt="سويتشيرت">
+                </div>
+
+                <div class="product-info">
+
+                    <span>سويتشيرت</span>
+
+                    <h3>
+                        سويتشيرت رمادي
+                    </h3>
+
+                    <p class="price">
+                        749 جنيه
+                    </p>
+
+                    <select>
+                        <option>اختاري المقاس</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                    </select>
+
+                    <button
+                        onclick="addToCart('سويتشيرت رمادي',749)">
+                        أضيفي إلى السلة
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+
+        <h2>
+            تواصلي معنا
+        </h2>
+
+        <p>
+            نحن سعداء بمساعدتك في أي وقت.
+        </p>
+
+        <button class="hero-btn">
+            تواصل معنا
+        </button>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="logo">
+            ALVORA
+        </div>
+
+        <p>
+            © 2026 ALVORA Clothing - جميع الحقوق محفوظة
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
