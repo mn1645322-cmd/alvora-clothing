@@ -108,3 +108,35 @@ if (checkoutForm) {
         checkoutForm.reset();
     });
 }
+// حفظ الطلب
+function saveOrder() {
+    const name = document.getElementById("name")?.value;
+    const phone = document.getElementById("phone")?.value;
+    const address = document.getElementById("address")?.value;
+    const payment = document.getElementById("payment")?.value;
+
+    if (!name || !phone || !address || !payment) {
+        alert("من فضلك املئي كل البيانات.");
+        return;
+    }
+
+    const total = cart.reduce(function(sum, product) {
+        return sum + product.price;
+    }, 0);
+
+    const order = {
+        name: name,
+        phone: phone,
+        address: address,
+        payment: payment,
+        products: cart,
+        total: total,
+        date: new Date().toLocaleString("ar-EG")
+    };
+
+    localStorage.setItem("lastOrder", JSON.stringify(order));
+
+    alert("تم حفظ طلبك بنجاح ❤️");
+
+    checkoutForm.reset();
+}
