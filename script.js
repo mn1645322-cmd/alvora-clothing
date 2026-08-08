@@ -81,3 +81,30 @@ function viewCart() {
 }
 
 updateCart();
+const checkoutForm = document.getElementById("checkout-form");
+
+if (checkoutForm) {
+    checkoutForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const phone = document.getElementById("phone").value;
+        const address = document.getElementById("address").value;
+        const payment = document.getElementById("payment").value;
+
+        if (!name || !phone || !address || !payment) {
+            alert("من فضلك املئي كل البيانات.");
+            return;
+        }
+
+        alert(
+            "تم استلام طلبك يا " +
+            name +
+            " ❤️\n" +
+            "سيتم التواصل معك على رقم: " +
+            phone
+        );
+
+        checkoutForm.reset();
+    });
+}
