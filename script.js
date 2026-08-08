@@ -1,33 +1,51 @@
-// ALVORA Clothing
 
 let cart = [];
 
-function addToCart(productName, price) {
+function addToCart(name, price) {
     cart.push({
-        name: productName,
+        name: name,
         price: price
     });
 
-    alert(productName + " تمت إضافته إلى السلة");
+    updateCartCount();
+
+    alert("تمت إضافة " + name + " إلى السلة 🛒");
+}
+
+function updateCartCount() {
+    const count = document.getElementById("cart-count");
+
+    if (count) {
+        count.textContent = cart.length;
+    }
 }
 
 function viewCart() {
     if (cart.length === 0) {
-        alert("السلة فارغة");
+        alert("السلة فارغة 🛒");
         return;
     }
 
-    let message = "المنتجات في السلة:\n\n";
     let total = 0;
+    let message = "🛒 منتجات السلة:\n\n";
 
-    cart.forEach(function(item) {
-        message += item.name + " - " + item.price + " جنيه\n";
-        total += item.price;
+    cart.forEach(function(product, index) {
+
+        message +=
+            (index + 1) +
+            "- " +
+            product.name +
+            " - " +
+            product.price +
+            " جنيه\n";
+
+        total += product.price;
     });
 
-    message += "\nإجمالي السعر: " + total + " جنيه";
+    message += "\n------------------\n";
+    message += "الإجمالي: " + total + " جنيه";
 
     alert(message);
 }
 
-console.log("ALVORA Website Ready");
+console.log("ALVORA Clothing جاهز للعمل");
