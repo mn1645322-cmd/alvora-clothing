@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ALVORA Clothing</title>
+    <title>ALVORA | متجر ملابس</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,18 +13,15 @@
 
 <header class="header">
 
-    <div class="logo">
-        ALVORA
-    </div>
+    <a href="#" class="logo">ALVORA</a>
 
-    <nav>
+    <nav class="nav">
         <a href="#home">الرئيسية</a>
         <a href="#products">المنتجات</a>
         <a href="#categories">الأقسام</a>
-        <a href="#contact">تواصل معنا</a>
     </nav>
 
-    <button class="cart-btn" onclick="viewCart()">
+    <button class="cart-button" onclick="openCart()">
         🛒 السلة
         <span id="cart-count">0</span>
     </button>
@@ -41,17 +38,13 @@
 
             <p>ALVORA COLLECTION</p>
 
-            <h1>
-                اكتشفي ستايلك
-                <br>
-                بطريقتك
-            </h1>
+            <h1>ستايلك يبدأ من هنا</h1>
 
             <p>
-                ملابس وأحذية وإكسسوارات لكل الأذواق
+                ملابس وأحذية لكل إطلالاتك
             </p>
 
-            <a href="#products" class="hero-btn">
+            <a href="#products" class="shop-button">
                 تسوقي الآن
             </a>
 
@@ -65,37 +58,35 @@
 
         <h2>الأقسام</h2>
 
-        <div class="category-container">
+        <div class="category-grid">
 
-            <div class="category">
-                <h3>تيشيرتات</h3>
-                <p>موديلات متنوعة</p>
-            </div>
+            <button onclick="filterProducts('all')">
+                الكل
+            </button>
 
-            <div class="category">
-                <h3>هوديز</h3>
-                <p>شتوي وكاجوال</p>
-            </div>
+            <button onclick="filterProducts('tshirt')">
+                تيشيرتات
+            </button>
 
-            <div class="category">
-                <h3>قمصان</h3>
-                <p>ستايلات مختلفة</p>
-            </div>
+            <button onclick="filterProducts('hoodie')">
+                هودي
+            </button>
 
-            <div class="category">
-                <h3>جواكت</h3>
-                <p>للشتاء والجو البارد</p>
-            </div>
+            <button onclick="filterProducts('shirt')">
+                قمصان
+            </button>
 
-            <div class="category">
-                <h3>بنطلونات</h3>
-                <p>جميع الأنواع</p>
-            </div>
+            <button onclick="filterProducts('jacket')">
+                جواكت
+            </button>
 
-            <div class="category">
-                <h3>أحذية</h3>
-                <p>أحذية لجميع الاستخدامات</p>
-            </div>
+            <button onclick="filterProducts('pants')">
+                بنطلونات
+            </button>
+
+            <button onclick="filterProducts('shoes')">
+                أحذية
+            </button>
 
         </div>
 
@@ -105,296 +96,47 @@
     <!-- المنتجات -->
     <section id="products" class="products">
 
-        <h2>منتجات ALVORA</h2>
+        <h2>كل المنتجات</h2>
 
-        <div class="products-grid">
+        <div id="products-grid" class="products-grid">
 
-
-            <!-- المنتج 1 -->
-            <div class="product-card">
-
-                <div class="product-image">
-                    <img src="https://via.placeholder.com/500x600" alt="تيشيرت أسود">
-                </div>
-
-                <div class="product-info">
-
-                    <span>تيشيرت</span>
-
-                    <h3>تيشيرت أسود OVERSIZE</h3>
-
-                    <p class="price">399 جنيه</p>
-
-                    <label>اللون</label>
-
-                    <div class="color-options">
-
-                        <button class="color black" title="أسود"></button>
-                        <button class="color white" title="أبيض"></button>
-                        <button class="color beige" title="بيج"></button>
-                        <button class="color gray" title="رمادي"></button>
-
-                    </div>
-
-                    <label>المقاس</label>
-
-                    <select class="size-select">
-                        <option value="">اختاري المقاس</option>
-                        <option>S</option>
-                        <option>M</option>
-                        <option>L</option>
-                        <option>XL</option>
-                        <option>XXL</option>
-                    </select>
-
-                    <button class="add-to-cart"
-                        onclick="addToCart('تيشيرت أسود OVERSIZE',399)">
-                        أضيفي إلى السلة
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- المنتج 2 -->
-            <div class="product-card">
-
-                <div class="product-image">
-                    <img src="https://via.placeholder.com/500x600" alt="هودي">
-                </div>
-
-                <div class="product-info">
-
-                    <span>هودي</span>
-
-                    <h3>هودي شتوي أسود</h3>
-
-                    <p class="price">699 جنيه</p>
-
-                    <label>اللون</label>
-
-                    <div class="color-options">
-                        <button class="color black"></button>
-                        <button class="color white"></button>
-                        <button class="color brown"></button>
-                        <button class="color gray"></button>
-                    </div>
-
-                    <label>المقاس</label>
-
-                    <select class="size-select">
-                        <option value="">اختاري المقاس</option>
-                        <option>S</option>
-                        <option>M</option>
-                        <option>L</option>
-                        <option>XL</option>
-                        <option>XXL</option>
-                    </select>
-
-                    <button class="add-to-cart"
-                        onclick="addToCart('هودي شتوي أسود',699)">
-                        أضيفي إلى السلة
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- المنتج 3 -->
-            <div class="product-card">
-
-                <div class="product-image">
-                    <img src="https://via.placeholder.com/500x600" alt="قميص">
-                </div>
-
-                <div class="product-info">
-
-                    <span>قمصان</span>
-
-                    <h3>قميص كاجوال</h3>
-
-                    <p class="price">550 جنيه</p>
-
-                    <label>اللون</label>
-
-                    <div class="color-options">
-                        <button class="color white"></button>
-                        <button class="color black"></button>
-                        <button class="color beige"></button>
-                        <button class="color blue"></button>
-                    </div>
-
-                    <label>المقاس</label>
-
-                    <select class="size-select">
-                        <option value="">اختاري المقاس</option>
-                        <option>S</option>
-                        <option>M</option>
-                        <option>L</option>
-                        <option>XL</option>
-                        <option>XXL</option>
-                    </select>
-
-                    <button class="add-to-cart"
-                        onclick="addToCart('قميص كاجوال',550)">
-                        أضيفي إلى السلة
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- المنتج 4 -->
-            <div class="product-card">
-
-                <div class="product-image">
-                    <img src="https://via.placeholder.com/500x600" alt="جاكيت">
-                </div>
-
-                <div class="product-info">
-
-                    <span>جواكت</span>
-
-                    <h3>جاكيت شتوي</h3>
-
-                    <p class="price">1200 جنيه</p>
-
-                    <label>اللون</label>
-
-                    <div class="color-options">
-                        <button class="color black"></button>
-                        <button class="color brown"></button>
-                        <button class="color beige"></button>
-                    </div>
-
-                    <label>المقاس</label>
-
-                    <select class="size-select">
-                        <option value="">اختاري المقاس</option>
-                        <option>S</option>
-                        <option>M</option>
-                        <option>L</option>
-                        <option>XL</option>
-                        <option>XXL</option>
-                    </select>
-
-                    <button class="add-to-cart"
-                        onclick="addToCart('جاكيت شتوي',1200)">
-                        أضيفي إلى السلة
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- المنتج 5 -->
-            <div class="product-card">
-
-                <div class="product-image">
-                    <img src="https://via.placeholder.com/500x600" alt="بنطلون">
-                </div>
-
-                <div class="product-info">
-
-                    <span>بنطلونات</span>
-
-                    <h3>بنطلون جينز</h3>
-
-                    <p class="price">750 جنيه</p>
-
-                    <label>اللون</label>
-
-                    <div class="color-options">
-                        <button class="color black"></button>
-                        <button class="color blue"></button>
-                        <button class="color gray"></button>
-                    </div>
-
-                    <label>المقاس</label>
-
-                    <select class="size-select">
-                        <option value="">اختاري المقاس</option>
-                        <option>28</option>
-                        <option>30</option>
-                        <option>32</option>
-                        <option>34</option>
-                        <option>36</option>
-                        <option>38</option>
-                    </select>
-
-                    <button class="add-to-cart"
-                        onclick="addToCart('بنطلون جينز',750)">
-                        أضيفي إلى السلة
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- المنتج 6 -->
-            <div class="product-card">
-
-                <div class="product-image">
-                    <img src="https://via.placeholder.com/500x600" alt="حذاء">
-                </div>
-
-                <div class="product-info">
-
-                    <span>أحذية</span>
-
-                    <h3>حذاء كاجوال</h3>
-
-                    <p class="price">950 جنيه</p>
-
-                    <label>اللون</label>
-
-                    <div class="color-options">
-                        <button class="color black"></button>
-                        <button class="color white"></button>
-                        <button class="color brown"></button>
-                    </div>
-
-                    <label>المقاس</label>
-
-                    <select class="size-select">
-                        <option value="">اختاري المقاس</option>
-                        <option>38</option>
-                        <option>39</option>
-                        <option>40</option>
-                        <option>41</option>
-                        <option>42</option>
-                        <option>43</option>
-                        <option>44</option>
-                    </select>
-
-                    <button class="add-to-cart"
-                        onclick="addToCart('حذاء كاجوال',950)">
-                        أضيفي إلى السلة
-                    </button>
-
-                </div>
-
-            </div>
-
+            <!-- المنتجات سيضيفها JavaScript هنا -->
 
         </div>
 
     </section>
 
 
-    <!-- التواصل -->
-    <section id="contact" class="contact">
+    <!-- السلة -->
+    <section id="cart" class="cart-section">
 
-        <h2>تواصلي معنا</h2>
+        <div class="cart-box">
 
-        <p>
-            ALVORA Clothing
-        </p>
+            <h2>سلة المشتريات 🛒</h2>
+
+            <div id="cart-items">
+                <p>السلة فارغة</p>
+            </div>
+
+            <div class="cart-total">
+
+                <span>الإجمالي</span>
+
+                <strong id="cart-total">
+                    0 جنيه
+                </strong>
+
+            </div>
+
+            <button
+                class="checkout-button"
+                onclick="checkout()">
+
+                إتمام الشراء
+
+            </button>
+
+        </div>
 
     </section>
 
@@ -404,51 +146,9 @@
 <footer>
 
     <p>
-        © 2026 ALVORA Clothing
+        © 2026 ALVORA
     </p>
-let cart = [];
 
-// إضافة منتج للسلة
-function addToCart(name, price) {
-    cart.push({
-        name: name,
-        price: price
-    });
-
-    updateCart();
-
-    alert("تمت إضافة المنتج إلى السلة 🛒");
-}
-
-
-// تحديث السلة
-function updateCart() {
-
-    const cartCount = document.getElementById("cart-count");
-
-    if (cartCount) {
-        cartCount.textContent = cart.length;
-    }
-}
-
-
-// فتح السلة
-function viewCart() {
-
-    const cartSection = document.getElementById("cart-section");
-
-    if (cartSection) {
-        cartSection.scrollIntoView({
-            behavior: "smooth"
-        });
-    } else {
-        alert("السلة فارغة حاليًا 🛒");
-    }
-}
-
-
-// تشغيل السلة عند فتح الموقع
-updateCart();
 </footer>
 
 
