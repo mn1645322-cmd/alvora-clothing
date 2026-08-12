@@ -26,14 +26,22 @@ const products = [
     }
 ];
 
-let cart = [];
+let cart = JSON.parse(localStorage.getItem("alvoraCart")) || [];
 
 const colors = ["أسود", "أبيض", "بيج", "بني", "رمادي"];
 const sizes = ["S", "M", "L", "XL", "XXL"];
 
+
+function saveCart() {
+    localStorage.setItem("alvoraCart", JSON.stringify(cart));
+}
+
+
 function displayProducts(list = products) {
 
     const grid = document.getElementById("products-grid");
+
+    if (!grid) return;
 
     grid.innerHTML = "";
 
@@ -62,6 +70,7 @@ function displayProducts(list = products) {
 
                         ${colors.map((color, colorIndex) => `
                             <button
+                                type="button"
                                 class="color color-${colorIndex}"
                                 data-color="${color}"
                                 onclick="selectColor(this)">
@@ -71,12 +80,13 @@ function displayProducts(list = products) {
                     </div>
 
                     <p class="selected-color">
-                        اللون: <span id="color-${index}">لم يتم الاختيار</span>
+                        اللون:
+                        <span>لم يتم الاختيار</span>
                     </p>
 
                     <label>المقاس</label>
 
-                    <select id="size-${index}">
+                    <select>
                         <option value="">اختاري المقاس</option>
 
                         ${sizes.map(size => `
@@ -88,6 +98,7 @@ function displayProducts(list = products) {
                     </select>
 
                     <button
+                        type="button"
                         class="add-to-cart"
                         onclick="addToCart(${index})">
 
@@ -115,7 +126,8 @@ function selectColor(button) {
 
     const color = button.dataset.color;
 
-    const colorText = parent.nextElementSibling.querySelector("span");
+    const colorText =
+        parent.nextElementSibling.querySelector("span");
 
     colorText.textContent = color;
 }
@@ -125,7 +137,12 @@ function addToCart(index) {
 
     const product = products[index];
 
-    const card = document.querySelectorAll(".product-card")[index];
+    const cards =
+        document.querySelectorAll(".product-card");
+
+    const card = cards[index];
+
+    if (!card) return;
 
     const selectedColor =
         card.querySelector(".color.selected");
@@ -133,24 +150,33 @@ function addToCart(index) {
     const selectedSize =
         card.querySelector("select").value;
 
+
     if (!selectedColor) {
         alert("اختاري اللون أولًا ❤️");
         return;
     }
+
 
     if (!selectedSize) {
         alert("اختاري المقاس أولًا ❤️");
         return;
     }
 
-    const color = selectedColor.dataset.color;
 
     cart.push({
+
         name: product.name,
+
         price: product.price,
-        color: color,
+
+        color: selectedColor.dataset.color,
+
         size: selectedSize
+
     });
+
+
+    saveCart();
 
     updateCart();
 
@@ -169,11 +195,21 @@ function updateCart() {
     const cartTotal =
         document.getElementById("cart-total");
 
-    cartCount.textContent = cart.length;
+
+    if (cartCount) {
+        cartCount.textContent = cart.length;
+    }
+
+
+    if (!cartItems || !cartTotal) {
+        return;
+    }
+
 
     cartItems.innerHTML = "";
 
     let total = 0;
+
 
     if (cart.length === 0) {
 
@@ -184,13 +220,18 @@ function updateCart() {
 
         cart.forEach((item, index) => {
 
-            total += item.price;
+            total += Number(item.price);
+
 
             cartItems.innerHTML += `
+
                 <div class="cart-item">
 
                     <div>
-                        <strong>${item.name}</strong>
+
+                        <strong>
+                            ${item.name}
+                        </strong>
 
                         <p>
                             اللون: ${item.color}
@@ -201,9 +242,12 @@ function updateCart() {
                         <span>
                             ${item.price} جنيه
                         </span>
+
                     </div>
 
+
                     <button
+                        type="button"
                         onclick="removeFromCart(${index})">
 
                         حذف
@@ -211,9 +255,11 @@ function updateCart() {
                     </button>
 
                 </div>
+
             `;
         });
     }
+
 
     cartTotal.textContent =
         total + " جنيه";
@@ -224,16 +270,24 @@ function removeFromCart(index) {
 
     cart.splice(index, 1);
 
+    saveCart();
+
     updateCart();
 }
 
 
 function openCart() {
 
-    document.getElementById("cart")
-        .scrollIntoView({
+    const cartSection =
+        document.getElementById("cart");
+
+    if (cartSection) {
+
+        cartSection.scrollIntoView({
             behavior: "smooth"
         });
+
+    }
 
     updateCart();
 }
@@ -245,15 +299,17 @@ function filterProducts(category) {
 
         displayProducts(products);
 
-    } else {
-
-        const filtered =
-            products.filter(product =>
-                product.category === category
-            );
-
-        displayProducts(filtered);
+        return;
     }
+
+
+    const filtered =
+        products.filter(product =>
+            product.category === category
+        );
+
+
+    displayProducts(filtered);
 }
 
 
@@ -262,14 +318,16 @@ function checkout() {
     if (cart.length === 0) {
 
         alert("السلة فارغة ❤️");
+
         return;
     }
 
-    alert(
-        "تم تجهيز طلبك ❤️\nسننتقل للدفع قريبًا."
-    );
+
+    window.location.href =
+        "checkout.html";
 }
 
 
 displayProducts();
+
 updateCart();
