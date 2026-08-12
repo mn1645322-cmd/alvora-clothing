@@ -1,55 +1,54 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ALVORA | Fashion Store</title>
+    <title>ALVORA Clothing</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header class="header">
+<header class="header">
 
-        <div class="logo">
-            ALVORA
-        </div>
+    <div class="logo">
+        ALVORA
+    </div>
 
-        <nav class="navbar">
-            <a href="#home">الرئيسية</a>
-            <a href="#products">المنتجات</a>
-            <a href="#categories">الأقسام</a>
-            <a href="#contact">تواصل معنا</a>
-        </nav>
+    <nav>
+        <a href="#home">الرئيسية</a>
+        <a href="#products">المنتجات</a>
+        <a href="#categories">الأقسام</a>
+        <a href="#contact">تواصل معنا</a>
+    </nav>
 
-        <button class="cart-btn" onclick="viewCart()">
-            🛒 السلة
-            <span id="cart-count">0</span>
-        </button>
+    <button class="cart-btn" onclick="viewCart()">
+        🛒 السلة
+        <span id="cart-count">0</span>
+    </button>
 
-    </header>
+</header>
 
 
-    <!-- Hero -->
-    <section class="hero" id="home">
+<main>
+
+    <!-- الرئيسية -->
+    <section id="home" class="hero">
 
         <div class="hero-content">
 
-            <p class="small-title">
-                ALVORA COLLECTION
-            </p>
+            <p>ALVORA COLLECTION</p>
 
             <h1>
-                أناقتك تبدأ من هنا
+                اكتشفي ستايلك
+                <br>
+                بطريقتك
             </h1>
 
             <p>
-                اكتشفي أحدث تشكيلات الملابس العصرية
-                بتصميمات مميزة تناسب كل إطلالة.
+                ملابس وأحذية وإكسسوارات لكل الأذواق
             </p>
 
             <a href="#products" class="hero-btn">
@@ -61,36 +60,41 @@
     </section>
 
 
-    <!-- Categories -->
-    <section class="categories" id="categories">
+    <!-- الأقسام -->
+    <section id="categories" class="categories">
 
-        <h2>تسوقي حسب القسم</h2>
+        <h2>الأقسام</h2>
 
         <div class="category-container">
 
             <div class="category">
                 <h3>تيشيرتات</h3>
-                <p>ستايل يومي مميز</p>
+                <p>موديلات متنوعة</p>
             </div>
 
             <div class="category">
                 <h3>هوديز</h3>
-                <p>راحة وأناقة</p>
+                <p>شتوي وكاجوال</p>
             </div>
 
             <div class="category">
-                <h3>بناطيل</h3>
-                <p>تصميمات عصرية</p>
+                <h3>قمصان</h3>
+                <p>ستايلات مختلفة</p>
             </div>
 
             <div class="category">
-                <h3>جاكيتات</h3>
-                <p>إطلالة مختلفة</p>
+                <h3>جواكت</h3>
+                <p>للشتاء والجو البارد</p>
             </div>
 
             <div class="category">
-                <h3>شورتات</h3>
-                <p>راحة في كل وقت</p>
+                <h3>بنطلونات</h3>
+                <p>جميع الأنواع</p>
+            </div>
+
+            <div class="category">
+                <h3>أحذية</h3>
+                <p>أحذية لجميع الاستخدامات</p>
             </div>
 
         </div>
@@ -98,54 +102,53 @@
     </section>
 
 
-    <!-- Products -->
-    <section class="products" id="products">
+    <!-- المنتجات -->
+    <section id="products" class="products">
 
-        <div class="section-title">
-
-            <p>NEW COLLECTION</p>
-
-            <h2>
-                أحدث المنتجات
-            </h2>
-
-        </div>
-
+        <h2>منتجات ALVORA</h2>
 
         <div class="products-grid">
 
 
-            <!-- Product 1 -->
+            <!-- المنتج 1 -->
             <div class="product-card">
 
                 <div class="product-image">
-                    <img
-                        src="https://via.placeholder.com/500x600"
-                        alt="تيشيرت أسود">
+                    <img src="https://via.placeholder.com/500x600" alt="تيشيرت أسود">
                 </div>
 
                 <div class="product-info">
 
-                    <span>تيشيرتات</span>
+                    <span>تيشيرت</span>
 
-                    <h3>
-                        تيشيرت أسود كلاسيك
-                    </h3>
+                    <h3>تيشيرت أسود OVERSIZE</h3>
 
-                    <p class="price">
-                        499 جنيه
-                    </p>
+                    <p class="price">399 جنيه</p>
 
-                    <select id="size1">
-                        <option>اختاري المقاس</option>
+                    <label>اللون</label>
+
+                    <div class="color-options">
+
+                        <button class="color black" title="أسود"></button>
+                        <button class="color white" title="أبيض"></button>
+                        <button class="color beige" title="بيج"></button>
+                        <button class="color gray" title="رمادي"></button>
+
+                    </div>
+
+                    <label>المقاس</label>
+
+                    <select class="size-select">
+                        <option value="">اختاري المقاس</option>
                         <option>S</option>
                         <option>M</option>
                         <option>L</option>
                         <option>XL</option>
+                        <option>XXL</option>
                     </select>
 
-                    <button
-                        onclick="addToCart('تيشيرت أسود كلاسيك',499)">
+                    <button class="add-to-cart"
+                        onclick="addToCart('تيشيرت أسود OVERSIZE',399)">
                         أضيفي إلى السلة
                     </button>
 
@@ -154,37 +157,43 @@
             </div>
 
 
-            <!-- Product 2 -->
+            <!-- المنتج 2 -->
             <div class="product-card">
 
                 <div class="product-image">
-                    <img
-                        src="https://via.placeholder.com/500x600"
-                        alt="تيشيرت أبيض">
+                    <img src="https://via.placeholder.com/500x600" alt="هودي">
                 </div>
 
                 <div class="product-info">
 
-                    <span>تيشيرتات</span>
+                    <span>هودي</span>
 
-                    <h3>
-                        تيشيرت أبيض سادة
-                    </h3>
+                    <h3>هودي شتوي أسود</h3>
 
-                    <p class="price">
-                        450 جنيه
-                    </p>
+                    <p class="price">699 جنيه</p>
 
-                    <select>
-                        <option>اختاري المقاس</option>
+                    <label>اللون</label>
+
+                    <div class="color-options">
+                        <button class="color black"></button>
+                        <button class="color white"></button>
+                        <button class="color brown"></button>
+                        <button class="color gray"></button>
+                    </div>
+
+                    <label>المقاس</label>
+
+                    <select class="size-select">
+                        <option value="">اختاري المقاس</option>
                         <option>S</option>
                         <option>M</option>
                         <option>L</option>
                         <option>XL</option>
+                        <option>XXL</option>
                     </select>
 
-                    <button
-                        onclick="addToCart('تيشيرت أبيض سادة',450)">
+                    <button class="add-to-cart"
+                        onclick="addToCart('هودي شتوي أسود',699)">
                         أضيفي إلى السلة
                     </button>
 
@@ -193,37 +202,43 @@
             </div>
 
 
-            <!-- Product 3 -->
+            <!-- المنتج 3 -->
             <div class="product-card">
 
                 <div class="product-image">
-                    <img
-                        src="https://via.placeholder.com/500x600"
-                        alt="هودي أسود">
+                    <img src="https://via.placeholder.com/500x600" alt="قميص">
                 </div>
 
                 <div class="product-info">
 
-                    <span>هوديز</span>
+                    <span>قمصان</span>
 
-                    <h3>
-                        هودي أسود فاخر
-                    </h3>
+                    <h3>قميص كاجوال</h3>
 
-                    <p class="price">
-                        899 جنيه
-                    </p>
+                    <p class="price">550 جنيه</p>
 
-                    <select>
-                        <option>اختاري المقاس</option>
+                    <label>اللون</label>
+
+                    <div class="color-options">
+                        <button class="color white"></button>
+                        <button class="color black"></button>
+                        <button class="color beige"></button>
+                        <button class="color blue"></button>
+                    </div>
+
+                    <label>المقاس</label>
+
+                    <select class="size-select">
+                        <option value="">اختاري المقاس</option>
                         <option>S</option>
                         <option>M</option>
                         <option>L</option>
                         <option>XL</option>
+                        <option>XXL</option>
                     </select>
 
-                    <button
-                        onclick="addToCart('هودي أسود فاخر',899)">
+                    <button class="add-to-cart"
+                        onclick="addToCart('قميص كاجوال',550)">
                         أضيفي إلى السلة
                     </button>
 
@@ -232,37 +247,42 @@
             </div>
 
 
-            <!-- Product 4 -->
+            <!-- المنتج 4 -->
             <div class="product-card">
 
                 <div class="product-image">
-                    <img
-                        src="https://via.placeholder.com/500x600"
-                        alt="هودي رمادي">
+                    <img src="https://via.placeholder.com/500x600" alt="جاكيت">
                 </div>
 
                 <div class="product-info">
 
-                    <span>هوديز</span>
+                    <span>جواكت</span>
 
-                    <h3>
-                        هودي رمادي
-                    </h3>
+                    <h3>جاكيت شتوي</h3>
 
-                    <p class="price">
-                        850 جنيه
-                    </p>
+                    <p class="price">1200 جنيه</p>
 
-                    <select>
-                        <option>اختاري المقاس</option>
+                    <label>اللون</label>
+
+                    <div class="color-options">
+                        <button class="color black"></button>
+                        <button class="color brown"></button>
+                        <button class="color beige"></button>
+                    </div>
+
+                    <label>المقاس</label>
+
+                    <select class="size-select">
+                        <option value="">اختاري المقاس</option>
                         <option>S</option>
                         <option>M</option>
                         <option>L</option>
                         <option>XL</option>
+                        <option>XXL</option>
                     </select>
 
-                    <button
-                        onclick="addToCart('هودي رمادي',850)">
+                    <button class="add-to-cart"
+                        onclick="addToCart('جاكيت شتوي',1200)">
                         أضيفي إلى السلة
                     </button>
 
@@ -271,37 +291,43 @@
             </div>
 
 
-            <!-- Product 5 -->
+            <!-- المنتج 5 -->
             <div class="product-card">
 
                 <div class="product-image">
-                    <img
-                        src="https://via.placeholder.com/500x600"
-                        alt="بنطلون جينز">
+                    <img src="https://via.placeholder.com/500x600" alt="بنطلون">
                 </div>
 
                 <div class="product-info">
 
-                    <span>بناطيل</span>
+                    <span>بنطلونات</span>
 
-                    <h3>
-                        بنطلون جينز أزرق
-                    </h3>
+                    <h3>بنطلون جينز</h3>
 
-                    <p class="price">
-                        799 جنيه
-                    </p>
+                    <p class="price">750 جنيه</p>
 
-                    <select>
-                        <option>اختاري المقاس</option>
+                    <label>اللون</label>
+
+                    <div class="color-options">
+                        <button class="color black"></button>
+                        <button class="color blue"></button>
+                        <button class="color gray"></button>
+                    </div>
+
+                    <label>المقاس</label>
+
+                    <select class="size-select">
+                        <option value="">اختاري المقاس</option>
+                        <option>28</option>
                         <option>30</option>
                         <option>32</option>
                         <option>34</option>
                         <option>36</option>
+                        <option>38</option>
                     </select>
 
-                    <button
-                        onclick="addToCart('بنطلون جينز أزرق',799)">
+                    <button class="add-to-cart"
+                        onclick="addToCart('بنطلون جينز',750)">
                         أضيفي إلى السلة
                     </button>
 
@@ -310,37 +336,44 @@
             </div>
 
 
-            <!-- Product 6 -->
+            <!-- المنتج 6 -->
             <div class="product-card">
 
                 <div class="product-image">
-                    <img
-                        src="https://via.placeholder.com/500x600"
-                        alt="بنطلون كارجو">
+                    <img src="https://via.placeholder.com/500x600" alt="حذاء">
                 </div>
 
                 <div class="product-info">
 
-                    <span>بناطيل</span>
+                    <span>أحذية</span>
 
-                    <h3>
-                        بنطلون كارجو
-                    </h3>
+                    <h3>حذاء كاجوال</h3>
 
-                    <p class="price">
-                        850 جنيه
-                    </p>
+                    <p class="price">950 جنيه</p>
 
-                    <select>
-                        <option>اختاري المقاس</option>
-                        <option>S</option>
-                        <option>M</option>
-                        <option>L</option>
-                        <option>XL</option>
+                    <label>اللون</label>
+
+                    <div class="color-options">
+                        <button class="color black"></button>
+                        <button class="color white"></button>
+                        <button class="color brown"></button>
+                    </div>
+
+                    <label>المقاس</label>
+
+                    <select class="size-select">
+                        <option value="">اختاري المقاس</option>
+                        <option>38</option>
+                        <option>39</option>
+                        <option>40</option>
+                        <option>41</option>
+                        <option>42</option>
+                        <option>43</option>
+                        <option>44</option>
                     </select>
 
-                    <button
-                        onclick="addToCart('بنطلون كارجو',850)">
+                    <button class="add-to-cart"
+                        onclick="addToCart('حذاء كاجوال',950)">
                         أضيفي إلى السلة
                     </button>
 
@@ -348,222 +381,34 @@
 
             </div>
 
-
-            <!-- Product 7 -->
-            <div class="product-card">
-
-                <div class="product-image">
-                    <img
-                        src="https://via.placeholder.com/500x600"
-                        alt="جاكيت جينز">
-                </div>
-
-                <div class="product-info">
-
-                    <span>جاكيتات</span>
-
-                    <h3>
-                        جاكيت جينز
-                    </h3>
-
-                    <p class="price">
-                        1199 جنيه
-                    </p>
-
-                    <select>
-                        <option>اختاري المقاس</option>
-                        <option>S</option>
-                        <option>M</option>
-                        <option>L</option>
-                        <option>XL</option>
-                    </select>
-
-                    <button
-                        onclick="addToCart('جاكيت جينز',1199)">
-                        أضيفي إلى السلة
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- Product 8 -->
-            <div class="product-card">
-
-                <div class="product-image">
-                    <img
-                        src="https://via.placeholder.com/500x600"
-                        alt="جاكيت شتوي">
-                </div>
-
-                <div class="product-info">
-
-                    <span>جاكيتات</span>
-
-                    <h3>
-                        جاكيت شتوي
-                    </h3>
-
-                    <p class="price">
-                        1499 جنيه
-                    </p>
-
-                    <select>
-                        <option>اختاري المقاس</option>
-                        <option>S</option>
-                        <option>M</option>
-                        <option>L</option>
-                        <option>XL</option>
-                    </select>
-
-                    <button
-                        onclick="addToCart('جاكيت شتوي',1499)">
-                        أضيفي إلى السلة
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- Product 9 -->
-            <div class="product-card">
-
-                <div class="product-image">
-                    <img
-                        src="https://via.placeholder.com/500x600"
-                        alt="شورت جينز">
-                </div>
-
-                <div class="product-info">
-
-                    <span>شورتات</span>
-
-                    <h3>
-                        شورت جينز
-                    </h3>
-
-                    <p class="price">
-                        499 جنيه
-                    </p>
-
-                    <select>
-                        <option>اختاري المقاس</option>
-                        <option>S</option>
-                        <option>M</option>
-                        <option>L</option>
-                        <option>XL</option>
-                    </select>
-
-                    <button
-                        onclick="addToCart('شورت جينز',499)">
-                        أضيفي إلى السلة
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- Product 10 -->
-            <div class="product-card">
-
-                <div class="product-image">
-                    <img
-                        src="https://via.placeholder.com/500x600"
-                        alt="سويتشيرت">
-                </div>
-
-                <div class="product-info">
-
-                    <span>سويتشيرت</span>
-
-                    <h3>
-                        سويتشيرت رمادي
-                    </h3>
-
-                    <p class="price">
-                        749 جنيه
-                    </p>
-
-                    <select>
-                        <option>اختاري المقاس</option>
-                        <option>S</option>
-                        <option>M</option>
-                        <option>L</option>
-                        <option>XL</option>
-                    </select>
-
-                    <button
-                        onclick="addToCart('سويتشيرت رمادي',749)">
-                        أضيفي إلى السلة
-                    </button>
-
-                </div>
-
-            </div>
 
         </div>
 
     </section>
 
 
-    <!-- Contact -->
-    <section class="contact" id="contact">
+    <!-- التواصل -->
+    <section id="contact" class="contact">
 
-        <h2>
-            تواصلي معنا
-        </h2>
+        <h2>تواصلي معنا</h2>
 
         <p>
-            نحن سعداء بمساعدتك في أي وقت.
+            ALVORA Clothing
         </p>
-
-        <button class="hero-btn">
-            تواصل معنا
-        </button>
 
     </section>
 
+</main>
 
-    <!-- Footer -->
-    <footer>
 
-        <div class="logo">
-            ALVORA
-        </div>
+<footer>
 
-        <p>
-            © 2026 ALVORA Clothing - جميع الحقوق محفوظة
-        </p>
+    <p>
+        © 2026 ALVORA Clothing
+    </p>
 
-    </footer>
+</footer>
 
-    <script src="script.js"></script>
-<!-- CART -->
-<section class="cart-section" id="cart-section">
-
-    <div class="cart-box">
-
-        <h2>🛒 سلة المشتريات</h2>
-
-        <div id="cart-items">
-            <p>السلة فارغة</p>
-        </div>
-
-        <div class="cart-total">
-            <strong>الإجمالي:</strong>
-            <span id="cart-total">0 جنيه</span>
-        </div>
-
-        <a href="checkout.html" class="checkout-btn">
-            إتمام الشراء
-        </a>
-
-    </div>
-
-</section>
 
 <script src="script.js"></script>
 
