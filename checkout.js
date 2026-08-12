@@ -1,48 +1,40 @@
-document
-    .getElementById("checkout-form")
-    .addEventListener("submit", function (event) {
+document.getElementById("checkout-form").addEventListener("submit", function (event) {
+    event.preventDefault();
 
-        event.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const address = document.getElementById("address").value.trim();
+    const notes = document.getElementById("notes").value.trim();
 
-        const name =
-            document.getElementById("name").value.trim();
+    const cart = JSON.parse(localStorage.getItem("alvoraCart")) || [];
 
-        const phone =
-            document.getElementById("phone").value.trim();
+    if (cart.length === 0) {
+        alert("السلة فارغة، أضيفي منتج أولًا ❤️");
+        return;
+    }
 
-        const address =
-            document.getElementById("address").value.trim();
+    const total = cart.reduce((sum, item) => {
+        return sum + Number(item.price);
+    }, 0);
 
-        const notes =
-            document.getElementById("notes").value.trim();
-
-        const payment =
-            document.querySelector(
-                'input[name="payment"]:checked'
-            ).value;
-
-
-        const order = {
+    const order = {
+        customer: {
             name: name,
             phone: phone,
             address: address,
-            notes: notes,
-            payment: payment,
-            date: new Date().toLocaleString("ar-EG")
-        };
+            notes: notes
+        },
+        products: cart,
+        total: total,
+        date: new Date().toLocaleString("ar-EG")
+    };
 
+    localStorage.setItem(
+        "alvoraOrder",
+        JSON.stringify(order)
+    );
 
-        localStorage.setItem(
-            "alvoraOrder",
-            JSON.stringify(order)
-        );
+    alert("تم تسجيل الطلب بنجاح ❤️");
 
-
-        alert(
-            "تم تسجيل بيانات طلبك بنجاح ❤️"
-        );
-
-
-        window.location.href = "index.html";
-
-    });
+    window.location.href = "index.html";
+});
