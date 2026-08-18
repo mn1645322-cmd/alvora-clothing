@@ -28,7 +28,12 @@ document.getElementById("checkout-form").addEventListener("submit", function (ev
         total: total,
         date: new Date().toLocaleString("ar-EG")
     };
-
+fetch("https://script.google.com/macros/s/AKfycby7CJh3h6Djaj2c-BGpznSOELjZhUKrVDx-zY2rHAS1vuAfzi-mfJPmlr1lRS9qHvcE/exec", {
+  method: "POST",
+  mode: "no-cors",
+  keepalive: true,
+  body: JSON.stringify(order)
+});
     localStorage.setItem(
         "alvoraOrder",
         JSON.stringify(order)
